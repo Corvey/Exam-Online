@@ -1,0 +1,846 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../无标题.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;
+	mso-char-type:none;
+	display:none;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../无标题.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#0563C1" vlink="#954F72" class=xl65>
+
+<table border=0 cellpadding=0 cellspacing=0 width=469 style='border-collapse:
+ collapse;table-layout:fixed;width:351pt'>
+ <col class=xl65 width=127 style='mso-width-source:userset;mso-width-alt:4421;
+ width:95pt'>
+ <col class=xl65 width=91 span=2 style='mso-width-source:userset;mso-width-alt:
+ 3165;width:68pt'>
+ <col class=xl65 width=69 style='mso-width-source:userset;mso-width-alt:2420;
+ width:52pt'>
+ <col class=xl65 width=91 style='mso-width-source:userset;mso-width-alt:3165;
+ width:68pt'>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 width=127 style='height:13.0pt;width:95pt'>字段名称</td>
+  <td class=xl66 width=91 style='border-left:none;width:68pt'>数据类型</td>
+  <td class=xl66 width=91 style='border-left:none;width:68pt'>是否允许为空</td>
+  <td class=xl66 width=69 style='border-left:none;width:52pt'>主键/外键</td>
+  <td class=xl66 width=91 style='border-left:none;width:68pt'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>spending</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>花费积分</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>resource_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>资源编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_user_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>用户编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>answer</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bit(1)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是否为答案</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>content</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>选项内容</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>question_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>题目编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>correct</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bit(1)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是否正确</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>display</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bit(1)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是否显示</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>exam_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>考试编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>question_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>题目编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_user_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>用户编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>choose_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>选择记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>choice_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>选项表</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>description</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>描述</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>name</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>考试名称</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>time</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>考试时间</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>exampaper_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>试卷编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>all_count</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>题目总数</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>grade</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>成绩</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>wrong_count</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>错题数</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>exam_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>考试编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_user_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>用户编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>description</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>描述</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>name</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>试卷名称</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>exampaper_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>试卷编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>question_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>题目编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>content</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>题干</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>type</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>题目类型</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>content</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>评论内容</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>good</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>点赞数</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_user_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>用户编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>question_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>题目编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>description</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>描述</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>download_times</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>下载次数</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>file_name</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>文件名称</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>file_path</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>文件路径</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>file_size</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>文件大小</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>name</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>资源名称</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>price</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>所需积分</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>content</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>评论内容</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>good</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>点赞数</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_user_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>用户编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>resource_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>资源编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>tinyint(4)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>authority</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(255)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>权限角色</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>create_date</td>
+  <td class=xl66 style='border-top:none;border-left:none'>datetime</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>创建日期</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>modified_date</td>
+  <td class=xl66 style='border-top:none;border-left:none'>datetime</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改日期</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>creator_user_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>创建者编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>modifier_user_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改者编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>money</td>
+  <td class=xl66 style='border-top:none;border-left:none'>int(11)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>积分</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>name</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>用户名</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>password</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>　</td>
+  <td class=xl66 style='border-top:none;border-left:none'>密码</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>username</td>
+  <td class=xl66 style='border-top:none;border-left:none'>varchar(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>UNI</td>
+  <td class=xl66 style='border-top:none;border-left:none'>登陆名</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_modify_log_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>char(32)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>是</td>
+  <td class=xl66 style='border-top:none;border-left:none'>外键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>修改记录编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl65 style='height:13.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt'>字段名称</td>
+  <td class=xl66 style='border-left:none'>数据类型</td>
+  <td class=xl66 style='border-left:none'>是否允许为空</td>
+  <td class=xl66 style='border-left:none'>主键/外键</td>
+  <td class=xl66 style='border-left:none'>说明</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_user_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>bigint(20)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>用户编号</td>
+ </tr>
+ <tr height=17 style='height:13.0pt'>
+  <td height=17 class=xl66 style='height:13.0pt;border-top:none'>sys_authority_id</td>
+  <td class=xl66 style='border-top:none;border-left:none'>tinyint(4)</td>
+  <td class=xl66 style='border-top:none;border-left:none'>否</td>
+  <td class=xl66 style='border-top:none;border-left:none'>主键</td>
+  <td class=xl66 style='border-top:none;border-left:none'>权限角色编号</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=127 style='width:95pt'></td>
+  <td width=91 style='width:68pt'></td>
+  <td width=91 style='width:68pt'></td>
+  <td width=69 style='width:52pt'></td>
+  <td width=91 style='width:68pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
