@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" 
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+             http://www.springframework.org/schema/tx
+             http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+             http://www.springframework.org/schema/aop
+             http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+             http://www.springframework.org/schema/context
+             http://www.springframework.org/schema/context/spring-context-3.1.xsd
+             http://www.springframework.org/schema/cache
+             http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
+             http://cxf.apache.org/jaxws 
+             http://cxf.apache.org/schemas/jaxws.xsd
+             http://www.springframework.org/schema/data/jpa 
+             http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+             http://www.springframework.org/schema/mvc 
+             http://www.springframework.org/schema/mvc/spring-mvc.xsd"
+	default-lazy-init="true">
+       
+	<!-- 导入配置文件 -->
+	<context:property-placeholder location="classpath:config.properties" />
+
+	<!-- 扫描包下注解 -->
+	<context:component-scan base-package="pers.corvey.exam" />
+
+	<!-- 视图页面配置 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	
+	<!-- 配置静态资源路径，对应webapp目录下（记得末尾要加/） -->
+	<mvc:resources mapping="/static/**" location="/static/" />
+	
+	<!-- 用了上面的标签后必须加上这个，否则controller映射不了 -->
+	<mvc:annotation-driven/>
+	
+	<!-- 数据源配置 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+
+		<!-- 基本属性 driver、url、user、password -->
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+
+		<!-- 配置初始化大小、最小、最大 -->
+		<property name="initialSize" value="1" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="10" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+		<!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+		<property name="filters" value="stat" />
+	</bean>
+
+    <!-- JPA实体管理器工厂 -->
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="persistenceProvider">
+        	<bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
+        </property>
+        <property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
+        <property name="packagesToScan" value="pers.corvey.exam.entity"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.current_session_context_class">
+                	${hibernate.current_session_context_class}
+               	</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                <prop key="hibernate.enable_lazy_load_no_trans">
+                	${hibernate.enable_lazy_load_no_trans}
+               	</prop>
+               	<prop key="hibernate.implicit_naming_strategy">
+                	pers.corvey.exam.other.hibernate.MyImplicitNamingStrategy
+               	</prop>
+            </props>
+        </property>
+    </bean>
+
+	<bean id="hibernateJpaVendorAdapter"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="database" value="MYSQL" />
+		<property name="showSql" value="true" />
+		<property name="generateDdl" value="true" />
+		<property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect" />
+	</bean>
+    
+    <!-- Jpa 事务配置 -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+    
+    <!-- Spring Data Jpa配置 -->
+    <jpa:repositories base-package="pers.corvey.exam.dao"
+                      transaction-manager-ref="transactionManager"
+                      entity-manager-factory-ref="entityManagerFactory"/>
+
+    <!-- http://jinnianshilongnian.iteye.com/blog/1901694 -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <!-- 使用annotation定义事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager" 
+    	proxy-target-class="true"/>
+    	
+   	<!-- 上传文件相关配置 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- set the max upload size100MB -->
+        <property name="maxUploadSize">
+            <value>104857600</value>
+        </property>
+        <property name="maxInMemorySize">
+            <value>4096</value>
+        </property>
+    </bean>
+    
+    <!-- object转json实现类 -->
+    <bean class="org.springframework.http.converter.json.GsonHttpMessageConverter"/>
+</beans>

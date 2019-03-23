@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"  
+    xmlns:beans="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://www.springframework.org/schema/security  
+        http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http entry-point-ref="authenticationEntryPoint" use-expressions="false">
+
+		<!-- 配置用户正常访问page -->
+		<intercept-url pattern="/static/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/captcha" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/register" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/exception/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/sys/user/save" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		
+		<intercept-url pattern="/**" access="ROLE_USER" />
+		<!-- 下面配置方便测试 -->
+		<!-- <intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" /> -->
+		
+		<session-management invalid-session-url="/login" />
+		<!-- <session-management invalid-session-url="/question/list" /> -->
+		
+		<access-denied-handler error-page="/exception/403"/>
+		
+    	<custom-filter ref="loginFilter" position="FORM_LOGIN_FILTER"/>  
+		
+		<!-- 登录配置 
+			1.username-parameter：表示登录时用户名使用的是哪个参数，默认是 “j_username”。
+			2.password-parameter：表示登录时密码使用的是哪个参数，默认是“j_password”。 
+			3.login-processing-url：表示登录时提交的地址，默认是 “/j-spring-security-check” 
+			4.login-page：登录页面 
+		-->
+		<!-- <form-login login-page="/login"
+			login-processing-url="/j-spring-security-check" 
+			username-parameter="j_username"
+			password-parameter="j_password" 
+			default-target-url="/login/log" 
+			authentication-failure-url="/login?error"/> -->
+
+		<!-- 登出设置 -->
+		<logout logout-url="/logout"
+			logout-success-url="/login" 
+			invalidate-session="true" />
+
+		<!-- 禁用csrf机制 防止跨站请求伪造 -->
+		<csrf disabled="true" />
+
+		<!-- HTTP标头配置 -->
+		<headers>
+			<!-- X-Frame-Options配置：网页是否可以放在iFrame内 DENY：浏览器拒绝当前页面加载任何Frame页面 SAMEORIGIN：frame页面的地址只能为同源域名下的页面 
+				ALLOW-FROM：origin为允许frame加载的页面地址。 -->
+			<frame-options policy="SAMEORIGIN" />
+		</headers>
+
+	</http>
+
+	<!--认证管理器：实现用户进行登录鉴定的类，主要实现UserDetailsService接口即可 -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="userDetailsService">
+			<password-encoder hash="md5">
+				<salt-source user-property="username" />
+			</password-encoder>
+		</authentication-provider>
+	</authentication-manager>
+
+	<!-- 项目实现的用户查询服务 -->
+	<beans:bean id="userDetailsService" class="pers.corvey.exam.other.security.UserDetailsServiceImpl" />
+	
+	<beans:bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<beans:constructor-arg type="java.lang.String" value="/login"/>
+	</beans:bean>
+
+	<beans:bean id="loginFilter" 
+		class="pers.corvey.exam.other.security.CaptchaUsernamePasswordAuthenticationFilter"> 
+	    <beans:property name="authenticationManager"  ref="authenticationManager"/>
+	    <beans:property name="authenticationSuccessHandler">  
+	        <beans:bean class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">  
+	            <beans:property name="defaultTargetUrl" value="/exam/show"/>  
+	        </beans:bean>
+	    </beans:property>
+	    <beans:property name="authenticationFailureHandler">  
+	        <beans:bean class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">  
+	            <beans:property name="defaultFailureUrl" value="/login?error"/>  
+	        </beans:bean>  
+	    </beans:property>
+	</beans:bean>    
+	
+</beans:beans>

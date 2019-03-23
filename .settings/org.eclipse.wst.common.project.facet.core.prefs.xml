@@ -1,0 +1,16 @@
+<root>
+  <facet id="maven"/>
+  <facet id="jst.web"/>
+  <facet id="wst.jsdt.web"/>
+  <facet id="java"/>
+  <facet id="jpt.jpa">
+    <node name="libprov">
+      <attribute name="provider-id" value="jpa-no-op-library-provider"/>
+    </node>
+  </facet>
+  <facet id="me.spring">
+    <node name="libprov">
+      <attribute name="provider-id" value="maven-lib-provider"/>
+    </node>
+  </facet>
+</root>
